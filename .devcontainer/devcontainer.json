@@ -1,0 +1,15 @@
+{
+  "name": "CaravanOS (ESP-IDF + Host)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "matepek.vscode-catch2-test-adapter"
+      ]
+    }
+  }
+}

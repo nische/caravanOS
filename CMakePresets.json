@@ -1,0 +1,42 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 20,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "host-debug",
+            "displayName": "Host Debug (Linux)",
+            "generator": "Ninja",
+            "binaryDir": "build/host-debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "HAL_PLATFORM": "posix",
+                "BUILD_TESTS": "OFF",
+                "BUILD_APPS": "ON"
+            }
+        },
+        {
+            "name": "host-test",
+            "displayName": "Host (Mock HAL)",
+            "generator": "Ninja",
+            "binaryDir": "build/host-mock",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "HAL_PLATFORM": "mock",
+                "BUILD_TESTS": "ON",
+                "BUILD_APPS": "OFF"
+            }
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "test",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "host-test"
+        }
+    ]
+}
