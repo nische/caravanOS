@@ -18,7 +18,7 @@ namespace core
 
     InstanceId instance_id() const noexcept { return id_; }
     MetricBus &bus() noexcept { return bus_; }
-
+    virtual void tick(uint64_t ts) = 0;
   protected:
     // compile-time Enforcement: nur erlaubte MetricIDs
     template <MetricID ID>

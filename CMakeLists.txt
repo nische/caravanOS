@@ -12,11 +12,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add HAL (interface + posix impl → unified 'hal' target)
 add_subdirectory(hal)
 add_subdirectory(core)
+add_subdirectory(devices)
 
 if (BUILD_TESTS)
   enable_testing()
   find_package(GTest REQUIRED)
   add_subdirectory(tests/core)
+  add_subdirectory(tests/devices)
 endif()
 # Hello-world app for Linux
 if (BUILD_APPS)
